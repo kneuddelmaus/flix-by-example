@@ -12,6 +12,7 @@ def main(): Unit \ IO =
     let aString = "Hello World";
     let aBigInt = 123ii;
     let aBigDecimal = 123.45ff;
+
     println(aUnit);
     println(falsyBool);
     println(truthyBool);
@@ -24,4 +25,29 @@ def main(): Unit \ IO =
     println(aInt64);
     println(aString);
     println(aBigInt);
-    println(aBigDecimal)
+    println(aBigDecimal);
+
+    // List
+
+    let aList = 1 :: 2 :: 3 :: Nil;
+    let anotherList = Cons(1, Cons(2, Cons(3, Nil)));
+    let yetAnotherList = List#{1, 2, 3};
+    println(aList);
+    println(anotherList);
+    println(aList == anotherList);
+    println(yetAnotherList == anotherList);
+
+    // Set
+
+    let aSet = Set#{1, 2, 3};
+    let anotherSet = Set.insert(3, Set.insert(2, Set.insert(1, Set.empty())));
+    println(aSet);
+    println(anotherSet);    
+    println(aSet == anotherSet);
+
+    // Map
+    let aMap = Map#{1 => "Hello", 2 => "World"};
+    let anotherMap = Map.insert(2, "World", (Map.insert(1, "Hello", Map.empty())));
+    println(aMap);
+    println(anotherMap);    
+    println(aMap == anotherMap)
