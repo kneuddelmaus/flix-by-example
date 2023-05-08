@@ -50,4 +50,20 @@ def main(): Unit \ IO =
     let anotherMap = Map.insert(2, "World", (Map.insert(1, "Hello", Map.empty())));
     println(aMap);
     println(anotherMap);    
-    println(aMap == anotherMap)
+    println(aMap == anotherMap);
+
+    // Tuple
+    let aTuple = (123, false);
+    // Pattern matching on a tuple
+    let (num, bool) = aTuple;
+    println(num);
+    println(bool);
+
+    let aListAgain = List#{(1, 2), (2, 3), (3, 4)};
+    // fst and snd are functions for working with Tuples but they only work with 2 element - tuple
+    println(List.map(fst, aListAgain) == List#{1, 2, 3});
+    println(List.map(snd, aListAgain) == List#{3, 4, 5});
+
+    let anotherTuple =  ("Lucky", "Luke", 42, true); // 4-tuple
+    let (firstName, _, _, _) = anotherTuple; // TODO::  How to omit extra underscores?
+    println(firstName)
