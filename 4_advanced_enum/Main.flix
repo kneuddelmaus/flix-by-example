@@ -21,3 +21,31 @@ def main(): Unit \ IO =
     let t1 = Tree.Node(Tree.Leaf("Hello"), Tree.Leaf("World"));
     let t2 = map(String.length, t1);
     println(sum(t2))
+
+
+/// Shorthand Enum Syntax
+// enum Weekday {
+//     case Monday,
+//     case Tuesday,
+//     case Wednesday,
+//     case Thursday,
+//     case Friday,
+//     case Saturday,
+//     case Sunday
+// }
+
+// The same enum can also be declared as:
+// enum Weekday {
+//     case Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+// }
+
+// Singleton Enum Syntax
+// An enum with a single case:
+
+// enum USD {
+//   case USD(Int32)
+// }
+
+// can be shortened to:
+
+// enum USD(Int32)
